@@ -8,5 +8,5 @@ import bindbc.sdl.image;
 void main()
 {
 
-write("hello");
+write("If you see this, then the shit works  h o r r a a  a");
 }
