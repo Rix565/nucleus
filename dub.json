@@ -1,0 +1,19 @@
+{
+  "name": "edit",
+  "authors": [
+    "Abb1x","PhereloHD","rnbunker","IdotMaster1"
+  ],
+  "description": "A basic text editor in D",
+  "copyright": "Copyright © 2021 eDit contributors",
+  "license": "MIT",
+  "dependencies": {
+    "bindbc-sdl": "~>0.16.0"
+  },
+  "versions" : [
+    "BindSDL_Image",
+    "SDL_2010",
+    "SDLImage205"
+  ],
+  "targetPath": "bin",
+  "dflags": ["-Isrc/"]
+}
