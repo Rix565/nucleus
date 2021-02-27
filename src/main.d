@@ -15,7 +15,6 @@ void main()
     else
         SDL_Quit();
 
-<<<<<<< HEAD
     SDL_Window *window = SDL_CreateWindow(
         "Example Window",
         SDL_WINDOWPOS_UNDEFINED,
@@ -48,7 +47,4 @@ void main()
             }
         }
     }
-=======
-write("If you see this, then the shit works  h o r r a a  a");
->>>>>>> 033e3fd18a05b91c48f963f870a0dba3724f99fe
 }
