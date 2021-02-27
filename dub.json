@@ -1,10 +1,10 @@
 {
   "name": "edit",
   "authors": [
-    "Abb1x","PhereloHD","rnbunker","IdotMaster1"
+    "Abb1x","PhereloHD","rnbunker","IdotMaster1","Bilaboz"
   ],
   "description": "A basic text editor in D",
-  "copyright": "Copyright © 2021 eDit contributors",
+  "copyright": "Copyright © 2021 eDit Contributors",
   "license": "MIT",
   "dependencies": {
     "bindbc-sdl": "~>0.16.0"
