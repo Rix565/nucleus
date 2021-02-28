@@ -2,6 +2,7 @@
 
 SDL_Window *window;
 SDL_Renderer *renderer;
+Colorscheme current_colorscheme;
 bool is_running = false;
 
 static float get_time_in_seconds()
@@ -14,7 +15,7 @@ static float get_time_in_seconds()
 void GUI_handle_events()
 {
     SDL_Event event;
-    if (SDL_WaitEvent(&event) != 0)
+    if (SDL_PollEvent(&event) != 0)
     {
         switch (event.type)
         {
@@ -23,6 +24,10 @@ void GUI_handle_events()
             is_running = false;
             break;
 
+        case SDL_TEXTINPUT:
+
+            printf("Text Input: %s\n", event.text.text);
+            break;
         default:
             break;
         }
@@ -38,14 +43,15 @@ int GUI_get_refresh_rate()
 
     return mode.refresh_rate;
 }
-
 void GUI_init(Colorscheme colorscheme)
 {
     if (SDL_Init(SDL_INIT_EVERYTHING) == 0)
     {
+        TTF_Init();
         is_running = true;
     }
 
+    current_colorscheme = colorscheme;
     /* Create Window and renderer */
     window = SDL_CreateWindow("Nucleus", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1920, 1080, SDL_WINDOW_RESIZABLE);
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
@@ -57,7 +63,10 @@ void GUI_init(Colorscheme colorscheme)
     float accumulator = 0.0f;
 
     float current_time = get_time_in_seconds();
-    
+
+    /* Start Text input */
+    SDL_StartTextInput();
+
     while (is_running)
     {
 
@@ -86,6 +95,8 @@ void GUI_init(Colorscheme colorscheme)
             SDL_Delay(1000 / GUI_get_refresh_rate() - frame_ticks);
         }
     }
+
+    SDL_StopTextInput();
 
     SDL_Quit();
     SDL_DestroyRenderer(renderer);

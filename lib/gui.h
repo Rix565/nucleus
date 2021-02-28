@@ -4,10 +4,7 @@
 #include <SDL2/SDL_ttf.h>
 #include <stdbool.h>
 
-typedef struct
-{
-    int r, g, b, a;
-} RGBA;
+typedef SDL_Color RGBA;
 
 typedef struct
 {

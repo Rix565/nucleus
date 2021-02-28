@@ -1,7 +1,11 @@
-#include <gui.h>
-#include <editor/editor.h>
 #include <SDL2/SDL.h>
+#include <editor/editor.h>
+#include <gui.h>
 #include <stdio.h>
+
+Colorscheme dracula;
+
+
 int main(int argc, char *argv[])
 {
 
@@ -9,8 +13,11 @@ int main(int argc, char *argv[])
     {
         Editor_open(argv[1]);
     }
-    Colorscheme onedark;
-    onedark.bg = (RGBA){40, 44, 52, 100};
-    GUI_init(onedark);
+
+    dracula.bg = (RGBA){40, 42, 54,255};
+    dracula.fg = (RGBA){248, 248, 242,255};
+
+    GUI_init(dracula);
+
     return 0;
 }
