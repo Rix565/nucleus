@@ -1,10 +1,16 @@
+#include "../lib/gui.h"
+#include "editor/editor.h"
 #include <SDL2/SDL.h>
 #include <stdio.h>
-#include "editor/editor.h"
-
-
 int main(int argc, char *argv[])
 {
-  Editor_open(argv[1]);
-return 0;
+
+    if (argc >= 2)
+    {
+        Editor_open(argv[1]);
+    }
+    Colorscheme onedark;
+    onedark.bg = (RGBA){40, 44, 52, 100};
+    GUI_init(onedark);
+    return 0;
 }
