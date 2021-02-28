@@ -52,11 +52,12 @@ void GUI_init(Colorscheme colorscheme)
 
     SDL_SetRenderDrawColor(renderer, colorscheme.bg.r, colorscheme.bg.g, colorscheme.bg.b, colorscheme.bg.a);
 
-    /* Limiting the game loop */
+    /* Limiting the main loop */
     const float timestep = 0.01f;
     float accumulator = 0.0f;
 
     float current_time = get_time_in_seconds();
+    
     while (is_running)
     {
 
@@ -81,12 +82,12 @@ void GUI_init(Colorscheme colorscheme)
 
         if (frame_ticks < 1000 / GUI_get_refresh_rate())
         {
+
             SDL_Delay(1000 / GUI_get_refresh_rate() - frame_ticks);
         }
     }
 
+    SDL_Quit();
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
-
-    SDL_Quit();
 }

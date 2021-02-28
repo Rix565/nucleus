@@ -1,5 +1,5 @@
-#include "../lib/gui.h"
-#include "editor/editor.h"
+#include <gui.h>
+#include <editor/editor.h>
 #include <SDL2/SDL.h>
 #include <stdio.h>
 int main(int argc, char *argv[])
